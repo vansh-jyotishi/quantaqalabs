@@ -1,0 +1,123 @@
+/* =========================================================
+   Quanta QA Labs — motion overlay
+   Loader, three.js globe, magnetic buttons, scroll parallax
+   ========================================================= */
+
+/* -------- Loader -------- */
+#loader {
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--ink-900);
+  display: grid; place-items: center;
+  transition: opacity .8s ease, visibility .8s ease;
+}
+#loader.gone { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-inner {
+  text-align: center;
+  font-family: var(--mono);
+  width: min(420px, 80vw);
+}
+.loader-glyph {
+  width: 64px; height: 64px;
+  border: 1.5px solid var(--teal);
+  border-radius: 12px;
+  display: grid; place-items: center;
+  margin: 0 auto 1.5rem;
+  color: var(--teal);
+  font-weight: 700; font-size: 26px;
+  background: rgba(34, 211, 238, 0.08);
+  position: relative;
+  animation: loader-pulse 1.6s ease-in-out infinite;
+  box-shadow: 0 0 40px rgba(34, 211, 238, 0.4);
+}
+@keyframes loader-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 40px rgba(34, 211, 238, 0.4); }
+  50% { transform: scale(1.04); box-shadow: 0 0 60px rgba(34, 211, 238, 0.7); }
+}
+.loader-glyph::after {
+  content: '';
+  position: absolute; right: -3px; bottom: -3px;
+  width: 10px; height: 10px; background: var(--teal);
+  border-radius: 2px;
+}
+.loader-msg {
+  font-size: 12px; color: var(--fog-2);
+  letter-spacing: 0.06em; min-height: 1.2em;
+  margin-bottom: 1rem;
+}
+.loader-msg .pct { color: var(--teal); margin-left: 6px; }
+.loader-bar {
+  width: 100%; height: 2px; background: var(--ink-700);
+  overflow: hidden; border-radius: 2px;
+}
+.loader-bar > span {
+  display: block; height: 100%; width: 0;
+  background: linear-gradient(to right, var(--teal-dim), var(--teal-2));
+  box-shadow: 0 0 12px var(--teal);
+  transition: width .3s ease;
+}
+
+/* -------- Three.js canvas -------- */
+#three-canvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+/* -------- Magnetic buttons -------- */
+.btn { will-change: transform; transition: transform .5s cubic-bezier(.2,.7,.2,1), background .3s, border-color .3s, box-shadow .3s; }
+
+/* -------- Reveal upgrade -------- */
+.reveal { transition: opacity 1.4s cubic-bezier(.2,.7,.2,1), transform 1.4s cubic-bezier(.2,.7,.2,1); }
+
+/* -------- Hero parallax layers -------- */
+.hero-copy { will-change: transform; }
+.hero-term { will-change: transform; }
+
+/* -------- Squares background section -------- */
+.squares-section {
+  position: relative;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  background: var(--ink-900);
+}
+.squares-section canvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  display: block;
+}
+.squares-section .sq-content {
+  position: relative; z-index: 2;
+  padding: 7rem 0;
+  text-align: center;
+  pointer-events: none;
+}
+.squares-section .sq-content h2 {
+  margin-bottom: 1rem;
+}
+.squares-section .sq-content p {
+  color: var(--fog-2);
+  max-width: 56ch;
+  margin: 1rem auto 0;
+}
+.squares-section .sq-content .btn { pointer-events: auto; }
+
+/* Inline squares behind a section (stacked layer) */
+.squares-bg {
+  position: absolute; inset: 0;
+  z-index: 0;
+  width: 100%; height: 100%;
+  pointer-events: auto;
+  opacity: 0.55;
+}
+.has-squares { position: relative; overflow: hidden; }
+.has-squares > .wrap { position: relative; z-index: 2; }
+.scroll-progress {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 2px; z-index: 100;
+  background: linear-gradient(to right, var(--teal-dim), var(--teal-2));
+  transform-origin: left;
+  transform: scaleX(0);
+  box-shadow: 0 0 8px var(--teal);
+}

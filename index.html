@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quanta QA Labs | Precision Testing, Quality Assured</title>
+  <meta name="description" content="Quality engineering at quantum precision. 12+ years of QA excellence. Playwright, Cypress, CI/CD, AI-powered testing." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="motion.css" />
+</head>
+<body id="top">
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-glyph">Q</div>
+      <div class="loader-msg">Initializing runtime <span class="pct">0%</span></div>
+      <div class="loader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress"></div>
+
+  <!-- ============== Top bar ============== -->
+  <header class="topbar">
+    <div class="wrap nav">
+      <a href="#top" class="logo" aria-label="Quanta QA Labs home">
+        <span class="glyph">Q</span>
+        <span class="name"><strong>QUANTA</strong><span class="small">QA LABS</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#process">Expertise</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="nav-cta">Get Started</a>
+    </div>
+  </header>
+
+  <!-- ============== Hero ============== -->
+  <section class="hero">
+    <canvas id="three-canvas"></canvas>
+    <canvas id="particle-canvas"></canvas>
+    <div class="grid-bg"></div>
+
+    <div class="wrap hero-inner">
+      <div class="hero-copy reveal">
+        <h1>
+          Quality Engineering<br />
+          At <span class="accent">Quantum</span> <span class="underline">Precision</span>
+        </h1>
+
+        <p class="lede">
+          Expert QA consultants and automation engineers with <strong>12+ years</strong> of hands-on experience.
+          From Figma to production. We architect, automate, and assure quality at every layer.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Start Your Project</a>
+          <a href="#services" class="btn btn-ghost">Explore Services</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="num"><span data-count="12" data-decimals="0">0</span><span class="unit">+</span></div>
+            <div class="label">Years Experience</div>
+          </div>
+          <div class="stat">
+            <div class="num"><span data-count="50" data-decimals="0">0</span><span class="unit">+</span></div>
+            <div class="label">Projects Delivered</div>
+          </div>
+          <div class="stat">
+            <div class="num"><span data-count="99.9" data-decimals="1">0</span><span class="unit">%</span></div>
+            <div class="label">Test Coverage</div>
+          </div>
+          <div class="stat">
+            <div class="num">24<span class="unit">/7</span></div>
+            <div class="label">Support Available</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated terminal -->
+      <div class="hero-term reveal">
+        <div class="terminal" aria-hidden="true">
+          <div class="terminal-bar">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="title">qa@quanta-labs - playwright runner</div>
+            <div class="actions"></div>
+          </div>
+          <div class="terminal-tabs">
+            <div class="tab active"><span class="dot"></span> runner.ts</div>
+            <div class="tab">orders.spec.ts</div>
+            <div class="tab">visual.spec.ts</div>
+            <div class="tab">+</div>
+          </div>
+          <div class="terminal-body" data-terminal></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Services ============== -->
+  <section class="sec has-squares" id="services">
+    <canvas data-squares data-size="48" data-speed="0.3" class="squares-bg"></canvas>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="meta">
+          <span class="eyebrow">What We Do</span>
+        </div>
+        <div>
+          <h2>End-to-End <span class="serif-italic">QA Solutions</span></h2>
+          <p style="color:var(--fog-2); margin-top:1.25rem; max-width:60ch;">
+            From strategy to execution, we deliver comprehensive quality engineering services that transform your testing practices.
+          </p>
+        </div>
+      </div>
+
+      <div class="services-grid reveal">
+        <article class="svc-card">
+          <div class="num"><span>01 STRATEGY</span></div>
+          <div class="icon">
+            <!-- microscope-ish glyph -->
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="6" r="3"/>
+              <path d="M12 9v8"/>
+              <path d="M8 17h8"/>
+              <path d="M6 21h12"/>
+              <path d="M9 6h-3"/>
+            </svg>
+          </div>
+          <h3>End-to-End QA Strategy</h3>
+          <p>From Figma designs to production deployment. We architect your entire quality ecosystem.</p>
+          <ul>
+            <li>Test Strategy Design</li>
+            <li>Framework Architecture</li>
+            <li>Process Optimization</li>
+            <li>Team Mentoring</li>
+          </ul>
+        </article>
+
+        <article class="svc-card">
+          <div class="num"><span>02 AUTOMATION</span></div>
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2 L4 14 h7 l-1 8 9-12 h-7 z"/>
+            </svg>
+          </div>
+          <h3>Test Automation</h3>
+          <p>Expert implementation with Playwright, Cypress, Selenium, and modern JS frameworks.</p>
+          <ul>
+            <li>Playwright &amp; Cypress</li>
+            <li>API Testing</li>
+            <li>Mobile Automation</li>
+            <li>Visual Regression</li>
+          </ul>
+        </article>
+
+        <article class="svc-card">
+          <div class="num"><span>03 CI / CD</span></div>
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12a9 9 0 0 1 15-6.7L21 8"/>
+              <path d="M21 3v5h-5"/>
+              <path d="M21 12a9 9 0 0 1-15 6.7L3 16"/>
+              <path d="M3 21v-5h5"/>
+            </svg>
+          </div>
+          <h3>CI/CD Integration</h3>
+          <p>Seamless pipeline integration with Jenkins, GitHub Actions, Azure DevOps, and more.</p>
+          <ul>
+            <li>Pipeline Design</li>
+            <li>Parallel Execution</li>
+            <li>Reporting Dashboards</li>
+            <li>Slack/Teams Alerts</li>
+          </ul>
+        </article>
+
+        <article class="svc-card">
+          <div class="num"><span>04 AI</span></div>
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="4" width="16" height="16" rx="2"/>
+              <path d="M9 9h6v6h-6z"/>
+              <path d="M9 2v2"/><path d="M15 2v2"/>
+              <path d="M9 20v2"/><path d="M15 20v2"/>
+              <path d="M2 9h2"/><path d="M2 15h2"/>
+              <path d="M20 9h2"/><path d="M20 15h2"/>
+            </svg>
+          </div>
+          <h3>AI-Powered Testing</h3>
+          <p>Leverage AI for intelligent test generation, self-healing locators, and predictive analytics.</p>
+          <ul>
+            <li>AI Test Generation</li>
+            <li>Self-Healing Tests</li>
+            <li>Defect Prediction</li>
+            <li>Smart Reporting</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Process ============== -->
+  <section class="sec" id="process" style="background: linear-gradient(to bottom, transparent, rgba(94,234,212,0.02), transparent);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="meta">
+          <span class="eyebrow">Our Process</span>
+        </div>
+        <div>
+          <h2>Figma to Production <span class="serif-italic">Pipeline</span></h2>
+        </div>
+      </div>
+
+      <div class="process reveal">
+        <div class="step">
+          <div class="num">01</div>
+          <h4>Design Analysis</h4>
+          <p>Review Figma/specs, identify test scenarios</p>
+          <div class="pipe"></div>
+          <div class="arrow"></div>
+        </div>
+        <div class="step">
+          <div class="num">02</div>
+          <h4>Test Strategy</h4>
+          <p>Define coverage, tools, and frameworks</p>
+          <div class="pipe"></div>
+          <div class="arrow"></div>
+        </div>
+        <div class="step">
+          <div class="num">03</div>
+          <h4>Test Cases</h4>
+          <p>Write comprehensive test documentation</p>
+          <div class="pipe"></div>
+          <div class="arrow"></div>
+        </div>
+        <div class="step">
+          <div class="num">04</div>
+          <h4>Automation</h4>
+          <p>Build robust, maintainable test suites</p>
+          <div class="pipe"></div>
+          <div class="arrow"></div>
+        </div>
+        <div class="step">
+          <div class="num">05</div>
+          <h4>CI/CD Integration</h4>
+          <p>Deploy to pipeline, monitor &amp; report</p>
+          <div class="pipe"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Tech stack ============== -->
+  <section class="sec-sm" id="tech">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-bottom:1.5rem;">
+        <div class="meta">
+          <span class="eyebrow">Tech Stack</span>
+        </div>
+        <div>
+          <h2>Tools <span class="serif-italic">We Master</span></h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-marquee">
+      <div class="tech-track">
+        <!-- duplicated for seamless loop -->
+        <div class="tech-chip"><span class="glyph"></span>Playwright</div>
+        <div class="tech-chip"><span class="glyph"></span>Cypress</div>
+        <div class="tech-chip"><span class="glyph"></span>Selenium</div>
+        <div class="tech-chip"><span class="glyph"></span>JavaScript</div>
+        <div class="tech-chip"><span class="glyph"></span>TypeScript</div>
+        <div class="tech-chip"><span class="glyph"></span>Python</div>
+        <div class="tech-chip"><span class="glyph"></span>Jenkins</div>
+        <div class="tech-chip"><span class="glyph"></span>GitHub Actions</div>
+        <div class="tech-chip"><span class="glyph"></span>Azure DevOps</div>
+        <div class="tech-chip"><span class="glyph"></span>Docker</div>
+        <div class="tech-chip"><span class="glyph"></span>Kubernetes</div>
+        <div class="tech-chip"><span class="glyph"></span>AWS</div>
+        <div class="tech-chip"><span class="glyph"></span>Postman</div>
+        <div class="tech-chip"><span class="glyph"></span>REST Assured</div>
+        <div class="tech-chip"><span class="glyph"></span>JMeter</div>
+        <div class="tech-chip"><span class="glyph"></span>k6</div>
+        <div class="tech-chip"><span class="glyph"></span>Appium</div>
+        <div class="tech-chip"><span class="glyph"></span>TestNG</div>
+        <div class="tech-chip"><span class="glyph"></span>Jest</div>
+        <div class="tech-chip"><span class="glyph"></span>Mocha</div>
+        <!-- duplicate -->
+        <div class="tech-chip"><span class="glyph"></span>Playwright</div>
+        <div class="tech-chip"><span class="glyph"></span>Cypress</div>
+        <div class="tech-chip"><span class="glyph"></span>Selenium</div>
+        <div class="tech-chip"><span class="glyph"></span>JavaScript</div>
+        <div class="tech-chip"><span class="glyph"></span>TypeScript</div>
+        <div class="tech-chip"><span class="glyph"></span>Python</div>
+        <div class="tech-chip"><span class="glyph"></span>Jenkins</div>
+        <div class="tech-chip"><span class="glyph"></span>GitHub Actions</div>
+        <div class="tech-chip"><span class="glyph"></span>Azure DevOps</div>
+        <div class="tech-chip"><span class="glyph"></span>Docker</div>
+        <div class="tech-chip"><span class="glyph"></span>Kubernetes</div>
+        <div class="tech-chip"><span class="glyph"></span>AWS</div>
+        <div class="tech-chip"><span class="glyph"></span>Postman</div>
+        <div class="tech-chip"><span class="glyph"></span>REST Assured</div>
+        <div class="tech-chip"><span class="glyph"></span>JMeter</div>
+        <div class="tech-chip"><span class="glyph"></span>k6</div>
+        <div class="tech-chip"><span class="glyph"></span>Appium</div>
+        <div class="tech-chip"><span class="glyph"></span>TestNG</div>
+        <div class="tech-chip"><span class="glyph"></span>Jest</div>
+        <div class="tech-chip"><span class="glyph"></span>Mocha</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Engagement Models ============== -->
+  <section class="sec-sm">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-bottom: 2rem;">
+        <div class="meta">
+          <span class="eyebrow">Engagement Models</span>
+        </div>
+        <div>
+          <h2>How We <span class="serif-italic">Work Together</span></h2>
+        </div>
+      </div>
+
+      <div class="pricing reveal">
+        <div class="price-card">
+          <span class="label">MODEL 01</span>
+          <h4>Staff Augmentation</h4>
+          <p>Embed our experts in your team.</p>
+          <div class="price">From <strong>₹80K</strong>/month</div>
+        </div>
+        <div class="price-card">
+          <span class="label">MODEL 02</span>
+          <h4>Project-Based</h4>
+          <p>Fixed scope, fixed timeline.</p>
+          <div class="price"><strong>Custom Quote</strong></div>
+        </div>
+        <div class="price-card">
+          <span class="label">MODEL 03</span>
+          <h4>Consulting</h4>
+          <p>Strategy &amp; architecture guidance.</p>
+          <div class="price">From <strong>₹5K</strong>/hour</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Contact ============== -->
+  <section class="sec" id="contact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="meta">
+          <span class="eyebrow">Get In Touch</span>
+        </div>
+        <div>
+          <h2>Let's Build <span class="serif-italic">Quality Together</span></h2>
+          <p style="color:var(--fog-2); margin-top:1.25rem; max-width:60ch;">
+            Ready to transform your QA practices? Drop us a message and let's discuss how we can help.
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-grid reveal">
+        <div class="contact-side">
+          <span class="eyebrow" style="margin-bottom:1.25rem;">Channels</span>
+          <h3 style="margin: 1rem 0 1.5rem;">Reach us</h3>
+
+          <a href="mailto:info@quantaqalabs.com" class="channel">
+            <div>
+              <div style="font-size:11px; color:var(--fog); margin-bottom:2px;">EMAIL</div>
+              <div>info@quantaqalabs.com</div>
+            </div>
+          </a>
+          <a href="https://quantaqalabs.in" class="channel">
+            <div>
+              <div style="font-size:11px; color:var(--fog); margin-bottom:2px;">WEB</div>
+              <div>quantaqalabs.in</div>
+            </div>
+          </a>
+          <a href="https://github.com/quantaqalabs" class="channel">
+            <div>
+              <div style="font-size:11px; color:var(--fog); margin-bottom:2px;">GITHUB</div>
+              <div>github.com/quantaqalabs</div>
+            </div>
+          </a>
+          <a href="https://linkedin.com/company/quantaqalabs" class="channel">
+            <div>
+              <div style="font-size:11px; color:var(--fog); margin-bottom:2px;">LINKEDIN</div>
+              <div>linkedin.com/company/quantaqalabs</div>
+            </div>
+          </a>
+
+          <div style="margin-top: 2rem; padding-top:2rem; border-top:1px solid var(--line);">
+            <div style="font-family:var(--mono); font-size:11px; color:var(--fog); letter-spacing:0.06em; margin-bottom:8px;">LOCATION</div>
+            <div style="font-family:var(--mono); font-size:14px;">Navi Mumbai, India</div>
+            <div style="margin-top:1.25rem; font-family:var(--mono); font-size:12px; color:var(--lime);">
+              Available 24/7
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <span class="eyebrow" style="margin-bottom:1.25rem;">Send Message</span>
+          <h3 style="margin: 1rem 0 1.5rem;">Send a message</h3>
+
+          <form onsubmit="event.preventDefault(); this.reset(); const b=this.querySelector('button'); b.textContent='Sent. We\'ll be in touch'; b.disabled=true;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Jane Doe" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="jane@company.com" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="company">Company</label>
+              <input id="company" type="text" placeholder="Company Inc." />
+            </div>
+            <div class="field">
+              <label for="msg">Message</label>
+              <textarea id="msg" placeholder="Tell us about your QA challenges..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Footer ============== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <div class="logo" style="margin-bottom:1rem;">
+            <span class="glyph">Q</span>
+            <span class="name"><strong>QUANTA</strong><span class="small">QA LABS</span></span>
+          </div>
+          <p style="color:var(--fog); max-width:36ch; line-height:1.6;">
+            Precision testing. Quality assured. 12+ years engineering quality at quantum precision.
+          </p>
+        </div>
+        <div>
+          <h5>Sitemap</h5>
+          <ul>
+            <li><a href="#top">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Connect</h5>
+          <ul>
+            <li><a href="https://github.com/quantaqalabs">GitHub</a></li>
+            <li><a href="https://linkedin.com/company/quantaqalabs">LinkedIn</a></li>
+            <li><a href="mailto:info@quantaqalabs.com">Email</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Office</h5>
+          <ul>
+            <li>Navi Mumbai, India</li>
+            <li>quantaqalabs.in</li>
+            <li style="color:var(--lime);">Available 24/7</li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© 2025 Quanta QA Labs. All rights reserved.</span>
+        <span>Built with care, uptime 99.99%</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+  <script src="app.js"></script>
+  <script type="module" src="motion.js"></script>
+</body>
+</html>
