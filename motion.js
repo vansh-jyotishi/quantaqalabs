@@ -191,7 +191,12 @@ function initThree() {
 
   function applyResponsiveScale() {
     const vw = window.innerWidth;
-    const s = vw < 480 ? 0.5 : vw < 640 ? 0.6 : vw < 960 ? 0.78 : 1;
+    // Globe is full-size at >=768px (iPad Mini and up); shrinks only below.
+    const s = vw < 380 ? 0.5
+            : vw < 480 ? 0.6
+            : vw < 640 ? 0.75
+            : vw < 768 ? 0.88
+            : 1;
     group.scale.setScalar(s);
     dust.scale.setScalar(s);
   }
