@@ -400,11 +400,14 @@ h3 { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
 }
 .terminal-body {
   padding: 1.25rem 1.25rem 1.5rem;
-  min-height: 360px;
+  height: 360px;
+  overflow-y: auto;
+  overflow-x: hidden;
   background:
     radial-gradient(ellipse at top right, rgba(34, 211, 238, 0.04), transparent 60%),
     var(--ink-800);
 }
+.term-line { min-width: 0; word-break: break-word; overflow-wrap: anywhere; }
 .term-line { display: flex; gap: 8px; min-height: 1.55em; line-height: 1.55; white-space: pre-wrap; }
 .term-prompt { color: var(--teal); flex-shrink: 0; }
 .term-cmd { color: var(--paper); }
@@ -1025,7 +1028,7 @@ h3 { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
   .terminal-bar { padding: 10px 12px; }
   .terminal-bar .title { display: none; }
   .terminal-tabs .tab { padding: 8px 10px; font-size: 10px; }
-  .terminal-body { padding: 1rem; min-height: 280px; overflow-x: auto; }
+  .terminal-body { padding: 1rem; height: 280px; overflow-y: auto; overflow-x: hidden; }
 
   .svc-card { padding: 1.75rem 1.5rem 1.5rem; }
   .price-card { padding: 1.5rem 1.25rem; }
