@@ -29,12 +29,15 @@
         <span class="glyph">Q</span>
         <span class="name"><strong>QUANTA</strong><span class="small">QA LABS</span></span>
       </a>
-      <nav class="nav-links" aria-label="Primary">
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
         <a href="#services">Services</a>
         <a href="#process">Expertise</a>
         <a href="#contact">Contact</a>
       </nav>
       <a href="#contact" class="nav-cta">Get Started</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -408,7 +411,7 @@
           <h3 style="margin: 1rem 0 1.5rem;">Send a message</h3>
 
           <form onsubmit="event.preventDefault(); this.reset(); const b=this.querySelector('button'); b.textContent='Sent. We\'ll be in touch'; b.disabled=true;">
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+            <div class="field-row">
               <div class="field">
                 <label for="name">Name</label>
                 <input id="name" type="text" placeholder="Jane Doe" required />
@@ -487,5 +490,30 @@
   </script>
   <script src="app.js"></script>
   <script type="module" src="motion.js"></script>
+  <script>
+    (function () {
+      var btn = document.getElementById('menu-toggle');
+      var nav = document.getElementById('nav-links');
+      if (!btn || !nav) return;
+      function close() {
+        btn.classList.remove('open');
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-open');
+      }
+      btn.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        btn.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.classList.toggle('nav-open', open);
+      });
+      nav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') close();
+      });
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 960) close();
+      });
+    })();
+  </script>
 </body>
 </html>
