@@ -138,7 +138,6 @@ img { display: block; max-width: 100%; }
 .menu-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
 .menu-toggle.open span:nth-child(2) { opacity: 0; }
 .menu-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-body.nav-open { overflow: hidden; }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -931,41 +930,77 @@ h3 { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
   .sec-sm { padding: 3rem 0; }
   .hero { padding: 4rem 0 3rem; }
 
-  /* Drop backdrop-filter on the topbar at mobile widths — it creates a
-     containing block for position:fixed descendants, which would clip the
-     full-screen menu overlay to the topbar's 64px bounds. */
+  /* Drop backdrop-filter on the topbar at mobile widths — it would create
+     a containing block for the position:fixed dropdown and clip it. */
   .topbar {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     background: var(--ink-900);
   }
 
-  /* Mobile nav: full-screen overlay sitting above the topbar */
+  /* Mobile nav: compact card that drops from under the hamburger */
   .topbar .nav-links {
-    display: none;
     position: fixed;
-    inset: 0;
+    top: 72px;
+    right: max(16px, 4vw);
+    left: auto;
+    display: flex;
     flex-direction: column;
     align-items: stretch;
-    justify-content: flex-start;
-    gap: 0;
-    padding: 88px 0 24px;
-    background: var(--ink-900);
+    gap: 2px;
+    width: min(260px, calc(100vw - 32px));
+    padding: 8px;
+    background: var(--ink-800);
+    border: 1px solid var(--line-2);
+    border-radius: 12px;
+    box-shadow:
+      0 18px 48px rgba(0, 0, 0, 0.55),
+      0 0 0 1px rgba(34, 211, 238, 0.06),
+      0 0 36px rgba(34, 211, 238, 0.08);
+    transform-origin: top right;
+    transform: translateY(-8px) scale(0.96);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity .2s ease,
+      transform .26s cubic-bezier(.2, .8, .25, 1);
     z-index: 60;
-    overflow-y: auto;
   }
-  .topbar .nav-links.open { display: flex; }
+  .topbar .nav-links.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
   .topbar .nav-links a {
-    padding: 18px 28px;
-    border-radius: 0;
-    font-size: 16px;
+    padding: 11px 14px;
+    border-radius: 8px;
+    font-size: 14px;
     color: var(--paper);
-    border-bottom: 1px solid var(--line);
+    opacity: 0;
+    transform: translateY(-4px);
+    transition:
+      opacity .25s ease,
+      transform .3s cubic-bezier(.2, .8, .25, 1),
+      background .2s ease,
+      color .2s ease;
   }
-  .topbar .nav-links a:first-child { border-top: 1px solid var(--line); }
-  .topbar .nav-links a:hover { background: rgba(34, 211, 238, 0.08); }
-  /* Hamburger sits above the overlay so it remains tappable */
-  .topbar .menu-toggle { display: inline-flex; position: relative; z-index: 61; }
+  .topbar .nav-links.open a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .topbar .nav-links.open a:nth-child(1) { transition-delay: .06s; }
+  .topbar .nav-links.open a:nth-child(2) { transition-delay: .11s; }
+  .topbar .nav-links.open a:nth-child(3) { transition-delay: .16s; }
+  .topbar .nav-links a:hover {
+    background: rgba(34, 211, 238, 0.10);
+    color: var(--teal);
+  }
+  /* Hamburger remains tappable above the dropdown */
+  .topbar .menu-toggle {
+    display: inline-flex;
+    position: relative;
+    z-index: 61;
+  }
   .topbar .nav-cta { display: none; }
 }
 
@@ -1005,7 +1040,7 @@ h3 { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
   .btn { padding: 12px 18px; font-size: 13px; }
 
   .nav { height: 56px; }
-  .nav-links { top: 56px; max-height: calc(100vh - 56px); }
+  .topbar .nav-links { top: 64px; }
 
   h2 { font-size: clamp(1.65rem, 6vw, 2.25rem); }
   h3 { font-size: 1.2rem; }
