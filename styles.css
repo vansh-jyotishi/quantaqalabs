@@ -960,6 +960,8 @@ h3 { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
   .topbar .nav-links a:hover { background: rgba(34, 211, 238, 0.08); }
   .topbar .menu-toggle { display: inline-flex; }
   .topbar .nav-cta { display: none; }
+  /* Solid topbar so the dropdown panel can't bleed through it */
+  body.nav-open .topbar { background: var(--ink-900); }
 }
 
 @media (max-width: 640px) {
