@@ -933,9 +933,9 @@ h3 { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
 
   /* Mobile nav: full-screen overlay sitting above the topbar */
   .topbar .nav-links {
+    display: none;
     position: fixed;
     inset: 0;
-    display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
@@ -944,14 +944,8 @@ h3 { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
     background: var(--ink-900);
     z-index: 60;
     overflow-y: auto;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .25s ease, visibility .25s ease;
   }
-  .topbar .nav-links.open {
-    opacity: 1;
-    visibility: visible;
-  }
+  .topbar .nav-links.open { display: flex; }
   .topbar .nav-links a {
     padding: 18px 28px;
     border-radius: 0;
