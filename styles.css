@@ -1017,11 +1017,24 @@ h3 { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
   .hero-cta { gap: 10px; margin-bottom: 2.5rem; }
   .hero-cta .btn { flex: 1 1 140px; justify-content: center; }
 
-  .stats { grid-template-columns: repeat(2, 1fr); }
-  .stat { padding: 1.25rem 0; }
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    background: rgba(5, 8, 16, 0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+  }
+  .stat { padding: 1.1rem 1rem; }
   .stat:not(:first-child) { padding-left: 1rem; }
   .stat .num { font-size: 1.85rem; }
   .stat .label { font-size: 10px; }
+  /* Knock back the hero canvas behind text on phones */
+  #three-canvas { opacity: 0.45; }
+  #particle-canvas { opacity: 0.6; }
 
   /* Terminal compresses on phones; allow horizontal scroll if a line is long */
   .terminal { font-size: 11px; }
