@@ -103,8 +103,6 @@ img { display: block; max-width: 100%; }
 .nav-links a.active {
   color: var(--paper);
 }
-/* CTA duplicate inside nav-links is for the mobile dropdown only */
-.nav-links .nav-cta { display: none; }
 
 .nav-cta {
   font-family: var(--mono); font-size: 13px; font-weight: 500;
@@ -960,14 +958,8 @@ h3 { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
     color: var(--paper);
   }
   .topbar .nav-links a:hover { background: rgba(34, 211, 238, 0.08); }
-  .topbar .nav-links .nav-cta {
-    display: inline-flex;
-    margin: 8px 24px 0;
-    justify-content: center;
-  }
   .topbar .menu-toggle { display: inline-flex; }
-  /* Hide the topbar's standalone CTA on mobile — it lives inside the dropdown instead */
-  .topbar > .wrap > .nav-cta { display: none; }
+  .topbar .nav-cta { display: none; }
 }
 
 @media (max-width: 640px) {
