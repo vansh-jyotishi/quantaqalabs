@@ -931,6 +931,15 @@ h3 { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
   .sec-sm { padding: 3rem 0; }
   .hero { padding: 4rem 0 3rem; }
 
+  /* Drop backdrop-filter on the topbar at mobile widths — it creates a
+     containing block for position:fixed descendants, which would clip the
+     full-screen menu overlay to the topbar's 64px bounds. */
+  .topbar {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--ink-900);
+  }
+
   /* Mobile nav: full-screen overlay sitting above the topbar */
   .topbar .nav-links {
     display: none;
