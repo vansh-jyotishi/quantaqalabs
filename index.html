@@ -513,6 +513,12 @@
       window.addEventListener('resize', function () {
         if (window.innerWidth > 960) close();
       });
+      // Close the dropdown as soon as the user starts scrolling the page
+      var lastY = window.scrollY;
+      window.addEventListener('scroll', function () {
+        if (!nav.classList.contains('open')) { lastY = window.scrollY; return; }
+        if (Math.abs(window.scrollY - lastY) > 6) close();
+      }, { passive: true });
     })();
   </script>
 </body>
