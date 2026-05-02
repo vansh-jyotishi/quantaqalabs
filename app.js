@@ -94,42 +94,6 @@ function initParticles(canvas) {
   }, { passive: true });
 }
 
-// ---------- Animated terminal ----------
-function initTerminal(host) {
-  if (!host) return;
-  const lines = [
-    { t: 'cmd', html: '<span class="term-prompt">qa@labs:~$</span><span class="term-cmd">npx playwright test --project=chromium --shard=1/4</span>' },
-    { t: 'out', html: '<span class="term-out dim">Running 248 tests using 8 workers</span>' },
-    { t: 'out', html: '<span class="term-out"><span class="term-ok">  ✓</span> [chromium] auth.spec.ts:14 › sign-in › valid creds <span class="term-comment">(1.2s)</span></span>' },
-    { t: 'out', html: '<span class="term-out"><span class="term-ok">  ✓</span> [chromium] checkout.spec.ts:8 › cart › add line item <span class="term-comment">(0.8s)</span></span>' },
-    { t: 'out', html: '<span class="term-out"><span class="term-ok">  ✓</span> [chromium] api/orders.spec.ts:22 › POST /orders <span class="term-comment">(0.4s)</span></span>' },
-    { t: 'out', html: '<span class="term-out"><span class="term-ok">  ✓</span> [chromium] visual.spec.ts:5 › regression › home <span class="term-comment">(2.1s)</span></span>' },
-    { t: 'out', html: '<span class="term-out"><span class="term-warn">  ↻</span> [chromium] flaky.spec.ts:11 › retrying (1/2) <span class="term-comment">(self-healing)</span></span>' },
-    { t: 'out', html: '<span class="term-out"><span class="term-ok">  ✓</span> [chromium] flaky.spec.ts:11 › recovered <span class="term-comment">(1.6s)</span></span>' },
-    { t: 'out', html: '<span class="term-out"><span class="term-ok">  ✓</span> [chromium] perf.spec.ts:3 › LCP &lt; 2.5s <span class="term-comment">(2.3s)</span></span>' },
-    { t: 'out', html: '<span class="term-out dim">  …<span class="term-comment"> 240 more passing</span></span>' },
-    { t: 'out', html: '<span class="term-out"><span class="term-ok">  248 passed</span> <span class="term-out dim">(00:42)</span></span>' },
-    { t: 'cmd', html: '<span class="term-prompt">qa@labs:~$</span><span class="term-cmd">qa-report --format=json --upload</span>' },
-    { t: 'out', html: '<span class="term-out">{ <span class="term-key">"coverage"</span>: <span class="term-str">"99.9%"</span>, <span class="term-key">"flake_rate"</span>: <span class="term-str">"0.04%"</span>, <span class="term-key">"duration"</span>: <span class="term-str">"42s"</span> }</span>' },
-    { t: 'out', html: '<span class="term-out"><span class="term-ok">uploaded to dashboard.qa</span></span>' },
-    { t: 'cmd', html: '<span class="term-prompt">qa@labs:~$</span><span class="term-cursor"></span>' },
-  ];
-
-  let i = 0;
-  function next() {
-    if (i >= lines.length) return;
-    const div = document.createElement('div');
-    div.className = 'term-line';
-    div.innerHTML = lines[i].html;
-    host.appendChild(div);
-    host.scrollTop = host.scrollHeight;
-    i++;
-    const delay = lines[i - 1].t === 'cmd' ? 700 : 220 + Math.random() * 220;
-    setTimeout(next, delay);
-  }
-  setTimeout(next, 600);
-}
-
 // ---------- Counters ----------
 function initCounters() {
   const els = document.querySelectorAll('[data-count]');
@@ -206,7 +170,6 @@ function drawSpark(svg) {
 document.addEventListener('DOMContentLoaded', () => {
   initReveals();
   initParticles(document.getElementById('particle-canvas'));
-  initTerminal(document.querySelector('[data-terminal]'));
   initCounters();
   initSvcGlow();
   initDash();

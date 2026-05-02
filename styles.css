@@ -273,8 +273,7 @@ h3 { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
 .hero-inner {
   position: relative; z-index: 2;
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr;
   align-items: center;
 }
 .hero-meta {
@@ -359,95 +358,6 @@ h3 { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
 .stat .label {
   font-family: var(--mono); font-size: 11px;
   color: var(--fog); text-transform: uppercase; letter-spacing: 0.06em;
-}
-
-/* ---------- Terminal window ---------- */
-.terminal {
-  background: var(--ink-800);
-  border: 1px solid var(--line-2);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow:
-    0 1px 0 rgba(255,255,255,0.04) inset,
-    0 30px 60px -20px rgba(0, 0, 0, 0.7),
-    0 0 0 1px rgba(34, 211, 238, 0.04);
-  font-family: var(--mono);
-  font-size: 13px;
-  position: relative;
-}
-.terminal-bar {
-  display: flex; align-items: center; gap: 10px;
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--line);
-  background: var(--ink-700);
-}
-.terminal-bar .dots { display: flex; gap: 6px; }
-.terminal-bar .dots span {
-  width: 11px; height: 11px; border-radius: 50%;
-  background: #2a3a37;
-}
-.terminal-bar .dots span:nth-child(1) { background: #ff5f57; }
-.terminal-bar .dots span:nth-child(2) { background: #febc2e; }
-.terminal-bar .dots span:nth-child(3) { background: #28c840; }
-.terminal-bar .title {
-  font-size: 11px; color: var(--fog);
-  flex: 1; text-align: center;
-  letter-spacing: 0.05em;
-}
-.terminal-bar .actions {
-  font-size: 11px; color: var(--fog);
-  display: flex; gap: 10px;
-}
-.terminal-body {
-  padding: 1.25rem 1.25rem 1.5rem;
-  height: 360px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  background:
-    radial-gradient(ellipse at top right, rgba(34, 211, 238, 0.04), transparent 60%),
-    var(--ink-800);
-}
-.term-line { min-width: 0; word-break: break-word; overflow-wrap: anywhere; }
-.term-line { display: flex; gap: 8px; min-height: 1.55em; line-height: 1.55; white-space: pre-wrap; }
-.term-prompt { color: var(--teal); flex-shrink: 0; }
-.term-cmd { color: var(--paper); }
-.term-out { color: var(--fog-2); padding-left: 16px; }
-.term-out.dim { color: var(--fog); }
-.term-ok { color: var(--lime); }
-.term-fail { color: var(--rose); }
-.term-warn { color: var(--amber); }
-.term-key { color: var(--teal-2); }
-.term-str { color: var(--amber); }
-.term-comment { color: var(--fog); font-style: italic; }
-.term-cursor {
-  display: inline-block; width: 8px; height: 1.05em;
-  background: var(--teal);
-  vertical-align: -2px;
-  animation: blink 1.05s steps(1) infinite;
-  margin-left: 2px;
-}
-@keyframes blink { 50% { opacity: 0; } }
-
-.terminal-tabs {
-  display: flex;
-  border-bottom: 1px solid var(--line);
-  background: var(--ink-700);
-}
-.terminal-tabs .tab {
-  font-family: var(--mono); font-size: 11px;
-  padding: 8px 14px;
-  color: var(--fog);
-  border-right: 1px solid var(--line);
-  cursor: pointer;
-  display: flex; align-items: center; gap: 8px;
-}
-.terminal-tabs .tab.active {
-  background: var(--ink-800);
-  color: var(--paper);
-}
-.terminal-tabs .tab .dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--teal);
 }
 
 /* ---------- Services ---------- */
@@ -1035,13 +945,6 @@ h3 { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
   /* Knock back the hero canvas behind text on phones */
   #three-canvas { opacity: 0.45; }
   #particle-canvas { opacity: 0.6; }
-
-  /* Terminal compresses on phones; allow horizontal scroll if a line is long */
-  .terminal { font-size: 11px; }
-  .terminal-bar { padding: 10px 12px; }
-  .terminal-bar .title { display: none; }
-  .terminal-tabs .tab { padding: 8px 10px; font-size: 10px; }
-  .terminal-body { padding: 1rem; height: 280px; overflow-y: auto; overflow-x: hidden; }
 
   .svc-card { padding: 1.75rem 1.5rem 1.5rem; }
   .price-card { padding: 1.5rem 1.25rem; }
