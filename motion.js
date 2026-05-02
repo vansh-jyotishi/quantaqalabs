@@ -189,11 +189,20 @@ function initThree() {
     ty = (e.clientY / window.innerHeight - 0.5) * 2;
   });
 
+  function applyResponsiveScale() {
+    const vw = window.innerWidth;
+    const s = vw < 480 ? 0.5 : vw < 640 ? 0.6 : vw < 960 ? 0.78 : 1;
+    group.scale.setScalar(s);
+    dust.scale.setScalar(s);
+  }
+  applyResponsiveScale();
+
   function resize() {
     const w = host.clientWidth, h = host.clientHeight;
     renderer.setSize(w, h, false);
     cam.aspect = w / h;
     cam.updateProjectionMatrix();
+    applyResponsiveScale();
   }
   onResize(resize);
 
