@@ -103,6 +103,8 @@ img { display: block; max-width: 100%; }
 .nav-links a.active {
   color: var(--paper);
 }
+/* CTA duplicate inside nav-links is for the mobile dropdown only */
+.nav-links .nav-cta { display: none; }
 
 .nav-cta {
   font-family: var(--mono); font-size: 13px; font-weight: 500;
@@ -932,13 +934,14 @@ h3 { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
   .hero { padding: 4rem 0 3rem; }
 
   /* Mobile nav: slide-down panel from the topbar */
-  .nav-links {
+  .topbar .nav-links {
     position: fixed;
     top: 64px; left: 0; right: 0;
+    display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 8px 0;
+    padding: 8px 0 12px;
     background: rgba(7, 16, 15, 0.96);
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
@@ -949,16 +952,22 @@ h3 { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.02em; }
     max-height: calc(100vh - 64px);
     overflow-y: auto;
   }
-  .nav-links.open { transform: translateY(0); }
-  .nav-links a {
+  .topbar .nav-links.open { transform: translateY(0); }
+  .topbar .nav-links a {
     padding: 14px 24px;
     border-radius: 0;
     font-size: 14px;
     color: var(--paper);
   }
-  .nav-links a:hover { background: rgba(34, 211, 238, 0.08); }
-  .menu-toggle { display: inline-flex; }
-  .nav-cta { display: none; }
+  .topbar .nav-links a:hover { background: rgba(34, 211, 238, 0.08); }
+  .topbar .nav-links .nav-cta {
+    display: inline-flex;
+    margin: 8px 24px 0;
+    justify-content: center;
+  }
+  .topbar .menu-toggle { display: inline-flex; }
+  /* Hide the topbar's standalone CTA on mobile — it lives inside the dropdown instead */
+  .topbar > .wrap > .nav-cta { display: none; }
 }
 
 @media (max-width: 640px) {
